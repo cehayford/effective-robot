@@ -1,1 +1,2 @@
-# effective-robot
+## SMS Sender
+SMS Sender is a web application designed to facilitate digital marketers, like Ronald Rolling, in sending SMS messages to multiple users. The platform provides features such as sending messages to multiple mobile numbers simultaneously, creating message templates, associating mobile numbers with templates, quick sending of messages using templates, and accessing controls for editing before sending or sending immediately. Additionally, users can view a history of sent SMS messages and utilize controls like resend and edit before send. The application utilizes the Africa's Talking platform for sending SMS.
