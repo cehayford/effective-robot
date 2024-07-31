@@ -40,16 +40,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'six',
     'oauth2_provider',
-    'knox',
+    'djoser',
     # project folders
     'account'
 ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'knox.auth.TokenAuthentication',
-        ),
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -9,7 +9,9 @@ django = "*"
 djangorestframework = "*"
 six = "*"
 django-oauth-toolkit = "*"
-django-rest-knox = "*"
+djoser = "*"
+djangorestframework-simplejwt = "*"
+social-auth-app-django = "*"
 
 [dev-packages]
 
