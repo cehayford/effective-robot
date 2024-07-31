@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-eg00!jgj758$2908$_170rv&sni5+gp=^siosq#jx5#f1!#n_1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,9 +39,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'six',
+    'oauth2_provider',
+    'knox',
     # project folders
     'account'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'knox.auth.TokenAuthentication',
+        ),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

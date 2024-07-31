@@ -8,6 +8,8 @@ env = "*"
 django = "*"
 djangorestframework = "*"
 six = "*"
+django-oauth-toolkit = "*"
+django-rest-knox = "*"
 
 [dev-packages]
 
