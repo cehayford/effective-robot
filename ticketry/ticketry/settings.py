@@ -45,6 +45,21 @@ INSTALLED_APPS = [
     'account'
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',  # Adjust if needed
+    ),
+}
+
+
+DJOSER = {
+    'SERIALIZERS': {
+        'user': 'account.serializers.Userserializer',
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
