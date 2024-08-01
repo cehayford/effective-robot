@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework.views import APIView
-from serializers import BaseUserSerializer
+from .serializers import BaseUserSerializer
 from rest_framework.response import Response
 from rest_framework.status import *
 
