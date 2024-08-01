@@ -1,5 +1,5 @@
-from djoser.serializers import UserSerializer as Save
+from djoser.serializers import UserSerializer as BaseUserSerializer
 
-class Userserializer(Save):
-    class Meta(Save.Meta):
-        fields = ['id', 'firstname', 'lastname', 'email']
+class Userserializer(BaseUserSerializer):
+    class Meta(BaseUserSerializer.Meta):
+        fields = ['id', 'first_name', 'last_name', 'email']

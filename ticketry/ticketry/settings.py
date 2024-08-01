@@ -58,6 +58,7 @@ REST_FRAMEWORK = {
 DJOSER = {
     'SERIALIZERS': {
         'user': 'account.serializers.Userserializer',
+        'current_user': 'account.serializers.Userserializer',
     }
 }
 
@@ -91,6 +92,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ticketry.wsgi.application'
 
+
+# AUTH_USER_MODEL = 'account.CustomUser'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
