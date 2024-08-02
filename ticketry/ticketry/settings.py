@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'oauth2_provider',
     'djoser',
     # project folders
-    'account'
+    'account',
+    'userprofile'
 ]
 
 REST_FRAMEWORK = {
