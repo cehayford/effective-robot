@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'djoser',
     # project folders
     'account',
-    'userprofile'
 ]
 
 REST_FRAMEWORK = {
