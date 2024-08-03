@@ -11,6 +11,6 @@ class Userserializer(BaseUserSerializer):
 class Userinfoserializer(serializers.ModelSerializer):
     userid = serializers.UUIDField(read_only = True)
     class Meta:
-        models = UserInfo
+        model = UserInfo
         fields = '__all__'
         
