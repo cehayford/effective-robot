@@ -1,11 +1,12 @@
-from djoser.serializers import UserSerializer as BaseUserSerializer
+from djoser.serializers import UserSerializer
 from rest_framework import serializers
-from .models import UserInfo, BookingHistory
+from .models import CustomUser,UserInfo, BookingHistory
 from uuid import uuid4
 
-class Userserializer(BaseUserSerializer):
-    class Meta(BaseUserSerializer.Meta):
-        fields = "['id', 'first_name', 'last_name', 'email']"
+class Userserializer(UserSerializer):
+    class Meta(UserSerializer.Meta):
+        model = CustomUser
+        fields = '__all__'
 
 
 class Userinfoserializer(serializers.ModelSerializer):
