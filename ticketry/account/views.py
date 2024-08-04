@@ -85,8 +85,10 @@ class UpdateUserInfoView(APIView):
                 'history' : history_serializer
             }
             return Response(comeback.data, status=HTTP_202_ACCEPTED)
-        except UserInfo.DoesNotExist as e:
-            return Response({'error': str(e)}, status= HTTP_500_INTERNAL_SERVER_ERROR)
+        except (UserInfo.DoesNotExist, BookingHistory.DoesNotExist) as e:
+            return Response({'error': str(e)}, status= HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return Response({'error':str(e)}, status=HTTP_500_INTERNAL_SERVER_ERROR)
 
     def patch(self, request, pk):
         try:
@@ -108,5 +110,7 @@ class UpdateUserInfoView(APIView):
                 'history' : history_serializer
             }
             return Response(comeback.data, status=HTTP_202_ACCEPTED)
-        except UserInfo.DoesNotExist as e:
+        except (UserInfo.DoesNotExist, BookingHistory.DoesNotExist) as e:
             return Response({'error':str(e)}, status= HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return Response({'error':str(e)}, status=HTTP_500_INTERNAL_SERVER_ERROR)
