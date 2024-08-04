@@ -26,10 +26,12 @@ class UserInfo(models.Model):
                 os.remove(file_path)
         super().delete(*args, **kwargs)
 
-# class BookingHistory(models.Model):
-#     payment_methods = models.JSONField(blank=True, null=True)
-#     event_preferences = models.JSONField(default=dict)
-#     membership_status = models.CharField(max_length=50, blank=True, null=True)
-#     subscription_details = models.JSONField(blank=True, null=True)
-#     two_factor_enabled = models.BooleanField(default=False)
-#     recent_login_activity = models.JSONField(default=list, blank=True)
+
+class BookingHistory(models.Model):
+    user = models.OneToOneField
+    payment_methods = models.JSONField(blank=True, null=True)
+    event_preferences = models.JSONField(default=dict)
+    membership_status = models.CharField(max_length=50, blank=True, null=True)
+    subscription_details = models.JSONField(blank=True, null=True)
+    two_factor_enabled = models.BooleanField(default=False)
+    recent_login_activity = models.JSONField(default=list, blank=True)
