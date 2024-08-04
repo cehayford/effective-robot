@@ -1,7 +1,6 @@
 from djoser.serializers import UserSerializer
 from rest_framework import serializers
 from .models import CustomUser,UserInfo, BookingHistory
-from uuid import uuid4
 
 class Userserializer(UserSerializer):
     class Meta(UserSerializer.Meta):
