@@ -49,13 +49,14 @@ class CustomUser(AbstractUser):
 
 class UserInfo(models.Model):
     userid = models.UUIDField(verbose_name='UserId', default=uuid4, editable=False)
-    first_name = models.TextField(max_length=25, blank=True)
-    last_name = models.TextField(max_length=25, blank=True)
+    first_name = models.ForeignKey(User.first_name, related_name='first_name', on_delete=models.CASCADE)
+    last_name = models.ForeignKey(User.last_name, related_name='last_name', on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=15, blank=True)
     profile_picture = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
     user_address = models.TextField(max_length=50, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         User.username = self.first_name + " " + self.last_name
         return User.username
